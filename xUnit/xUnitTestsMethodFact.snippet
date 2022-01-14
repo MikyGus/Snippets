@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>xUnit TestMethod Fact</Title>
+            <Author>MikyGus</Author>
+            <Description>Inserts a xUnit TestMethod with Fact.</Description>
+            <Shortcut>xtestf</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[    [Fact]
+    public void Creation_New_GetsInstance()
+    {
+        // Arrange
+        var b = new Builder();
+        // Act
+
+        // Assert
+        Assert.NotNull(b);
+    }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

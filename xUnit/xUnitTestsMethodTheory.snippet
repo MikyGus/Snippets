@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>xUnit TestMethod Theory</Title>
+            <Author>MikyGus</Author>
+            <Description>Inserts a xUnit TestMethod with Theory.</Description>
+            <Shortcut>xtestf</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[        public static IEnumerable<object[]> TestData =>
+          new List<object[]>
+          {
+        new object[] { 66M, 17M, 610M, 389M },
+        new object[] { 86M, 22.10M, 793M, 505M },
+        new object[] { 99M, 27.20M, 976M, 615M }
+          };
+
+        [Theory, MemberData(nameof(TestData))]
+        public void CreateTaxa(decimal startAvg, decimal krPerKm, decimal krPerTim, decimal expectedJmfPris)
+        {
+            // Arrange
+            // Act
+            var JmfPris = TaxaCalculation.TaxaPris(startAvg, krPerKm, krPerTim);
+            // Assert
+            Math.Round(JmfPris, 0, MidpointRounding.AwayFromZero).Should().Be(expectedJmfPris);
+        }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
