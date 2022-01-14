@@ -5,28 +5,46 @@
             <Title>xUnit TestMethod Theory</Title>
             <Author>MikyGus</Author>
             <Description>Inserts a xUnit TestMethod with Theory.</Description>
-            <Shortcut>xtestf</Shortcut>
+            <Shortcut>xtestt</Shortcut>
         </Header>
         <Snippet>
             <Code Language="CSharp">
-                <![CDATA[        public static IEnumerable<object[]> TestData =>
-          new List<object[]>
-          {
-        new object[] { 66M, 17M, 610M, 389M },
-        new object[] { 86M, 22.10M, 793M, 505M },
-        new object[] { 99M, 27.20M, 976M, 615M }
-          };
+                <![CDATA[        public static IEnumerable<object[]> $TestData$ =>
+                    new List<object[]>
+                    {
+            new object[] { 66M, 17M },
+            new object[] { 86M, 22.10M },
+            new object[] { 99M, 27.20M }
+                    };
 
-        [Theory, MemberData(nameof(TestData))]
-        public void CreateTaxa(decimal startAvg, decimal krPerKm, decimal krPerTim, decimal expectedJmfPris)
+        [Theory, MemberData(nameof($TestData$))]
+        public void $TestTitle$(decimal testValue, decimal expectedValue)
         {
-            // Arrange
-            // Act
-            var JmfPris = TaxaCalculation.TaxaPris(startAvg, krPerKm, krPerTim);
-            // Assert
-            Math.Round(JmfPris, 0, MidpointRounding.AwayFromZero).Should().Be(expectedJmfPris);
+        // Arrange
+        var b = new Builder();
+        // Act
+
+        // Assert
+        Assert.NotNull(b);
         }]]>
             </Code>
+            <Declarations>
+                <Literal>
+                    <ID>TestTitle</ID>
+                    <Default>Creation_New_GetsInstance</Default>
+                    <ToolTip>Name of the TestMethod</ToolTip>
+                </Literal>
+                <Literal>
+                    <ID>TestData</ID>
+                    <Default>TestData</Default>
+                    <ToolTip>Name of the Data to test</ToolTip>
+                </Literal>
+            </Declarations>
+            <Imports>
+                <Import>
+                    <Namespace>System.Collections.Generic</Namespace>
+                </Import>
+            </Imports>
         </Snippet>
     </CodeSnippet>
 </CodeSnippets>
