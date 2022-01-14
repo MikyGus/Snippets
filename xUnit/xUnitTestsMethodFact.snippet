@@ -10,7 +10,7 @@
         <Snippet>
             <Code Language="CSharp">
                 <![CDATA[    [Fact]
-    public void Creation_New_GetsInstance()
+    public void $TestTitle$()
     {
         // Arrange
         var b = new Builder();
@@ -20,6 +20,13 @@
         Assert.NotNull(b);
     }]]>
             </Code>
+            <Declarations>
+                <Literal>
+                    <ID>TestTitle</ID>
+                    <Default>Creation_New_GetsInstance</Default>
+                    <ToolTip>Name of the TestMethod</ToolTip>
+                </Literal>
+            </Declarations>
         </Snippet>
     </CodeSnippet>
 </CodeSnippets>
