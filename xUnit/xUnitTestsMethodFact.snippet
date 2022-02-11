@@ -10,7 +10,7 @@
         <Snippet>
             <Code Language="CSharp">
                 <![CDATA[    [Fact]
-    public void $TestTitle$()
+    public void $MethodName$_Should$Should$_When$When$()
     {
         // Arrange
         var b = new Builder();
@@ -22,11 +22,27 @@
             </Code>
             <Declarations>
                 <Literal>
-                    <ID>TestTitle</ID>
-                    <Default>Creation_New_GetsInstance</Default>
-                    <ToolTip>Name of the TestMethod</ToolTip>
+                    <ID>MethodName</ID>
+                    <Default>MethodName</Default>
+                    <ToolTip>Name of Method to test</ToolTip>
+                </Literal>
+                <Literal>
+                    <ID>Should</ID>
+                    <Default>ReturnTrue</Default>
+                    <ToolTip>The expected result</ToolTip>
+                </Literal>
+                <Literal>
+                    <ID>When</ID>
+                    <Default>CustomerExists</Default>
+                    <ToolTip>When the expected result should happen.</ToolTip>
                 </Literal>
             </Declarations>
+            <Imports>
+                <Import>
+                    <Namespace>Xunit</Namespace>
+                    <Namespace>FluentAssertions</Namespace>
+                </Import>
+            </Imports>
         </Snippet>
     </CodeSnippet>
 </CodeSnippets>
